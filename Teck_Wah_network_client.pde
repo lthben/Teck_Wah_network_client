@@ -97,10 +97,8 @@ void process_server_string(String _string) {
                         isDisplayOpen = false;
                 }
         }
-        myClient.write(to_server_string);
-        
+        myClient.write(to_server_string); 
         to_server_string_display = to_server_string;
-        
         to_server_string = "";//reset
 }
 
