@@ -96,7 +96,9 @@ void process_server_string(String _string) {
                         to_server_string = "display_close";
                         isDisplayOpen = false;
                 }
-        }
+        } else if (_string.equals("1tag_1") || _string.equals("2tag_1")) {
+                 to_server_string = "light4a_on";        
+        }        
         myClient.write(to_server_string); 
         to_server_string_display = to_server_string;
         to_server_string = "";//reset
