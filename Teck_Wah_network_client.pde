@@ -8,7 +8,7 @@
  The Flash client should send all data in the form of strings as well, including numbers. 
  The Flash client is the brains and will contain all operating logic. 
  
- Last updated: 26 Jan 2016
+ Last updated: 4 Feb 2016
  */
 
 import processing.net.*; 
@@ -80,24 +80,24 @@ void process_server_string(String _string) {
         
         if (_string.equals("touch1_activated")) {
                 if (!isDrawerOpen) {
-                        to_server_string = "drawer_open";
+                        to_server_string = "drawer_open|";
                         isDrawerOpen = true;
                 }
                 else if (isDrawerOpen) {
-                        to_server_string = "drawer_close";
+                        to_server_string = "drawer_close|";
                         isDrawerOpen = false;
                 }
         } else if (_string.equals("touch2_activated")) {
                 if (!isDisplayOpen) {
-                        to_server_string = "display_open";
+                        to_server_string = "display_open|";
                         isDisplayOpen = true;
                 }
                 else if (isDisplayOpen) {
-                        to_server_string = "display_close";
+                        to_server_string = "display_close|";
                         isDisplayOpen = false;
                 }
-        } else if (_string.equals("1tag_1") || _string.equals("2tag_1")) {
-                 to_server_string = "light4a_on";        
+        } else if (_string.equals("1tag_1")) {
+                 to_server_string = "light4a_on|";        
         }        
         myClient.write(to_server_string); 
         to_server_string_display = to_server_string;
